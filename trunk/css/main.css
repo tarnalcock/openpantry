@@ -1,0 +1,113 @@
+/* browser reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,
+kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td 
+{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;} :focus {outline:0;}ins{text-decoration:none;}
+del{text-decoration:line-through;}table{border-collapse:collapse;border-spacing:0;}
+
+body {
+	color: #36393D;
+	font-family: Verdana;
+	font-size: 14px;
+}
+
+table.framework {
+	width: 100%;
+}
+
+td.tier {
+	width: 100%;
+}
+
+.spiffy{display:block}
+.spiffy *{
+  display:block;
+  height:1px;
+  overflow:hidden;
+  font-size:.01em;
+  background:#c3d9ff}
+.spiffy1{
+  margin-left:3px;
+  margin-right:3px;
+  padding-left:1px;
+  padding-right:1px;
+  border-left:1px solid #e5eeff;
+  border-right:1px solid #e5eeff;
+  background:#d2e2ff}
+.spiffy2{
+  margin-left:1px;
+  margin-right:1px;
+  padding-right:1px;
+  padding-left:1px;
+  border-left:1px solid #f9fbff;
+  border-right:1px solid #f9fbff;
+  background:#cee0ff}
+.spiffy3{
+  margin-left:1px;
+  margin-right:1px;
+  border-left:1px solid #cee0ff;
+  border-right:1px solid #cee0ff;}
+.spiffy4{
+  border-left:1px solid #e5eeff;
+  border-right:1px solid #e5eeff}
+.spiffy5{
+  border-left:1px solid #d2e2ff;
+  border-right:1px solid #d2e2ff}
+.spiffyfg{
+  padding-left: 10px;
+  width: 420px;
+  font-size: 18px;
+  background:#c3d9ff}
+.spiffyfg-a{
+  padding-left: 10px;
+  width: 295px;
+  font-size: 18px;
+  background:#c3d9ff}
+.spiffyfg-b{
+  padding-left: 10px;
+  width: 306px;
+  font-size: 18px;
+  background:#c3d9ff}
+.spiffyfg-c{
+  padding-left: 10px;
+  width: 130px;
+  font-size: 18px;
+  background:#c3d9ff}
+.spiffyfg-d{
+  padding-left: 10px;
+  width: 310px;
+  font-size: 18px;
+  background:#c3d9ff}
+.spiffyfg-e{
+  padding-left: 10px;
+  width: 120px;
+  font-size: 18px;
+  background:#c3d9ff}
+.spiffyfg-f{
+  padding-left: 10px;
+  width: 150px;
+  font-size: 18px;
+  background:#c3d9ff}
+.spiffyfg-g{
+  padding-left: 10px;
+  width: 197px;
+  font-size: 18px;
+  background:#c3d9ff}
+  
+.spiffyfg input,
+.spiffyfg-a input,
+.spiffyfg-b input,
+.spiffyfg-c input,
+.spiffyfg-d input,
+.spiffyfg-e input,
+.spiffyfg-f input,
+.spiffyfg-g input{
+ font-family: verdana;
+ font-size: 16px;}
+ 
+td input[type=text],
+td select,
+td textarea {
+	border: 1px solid #b8b8b8;
+	font-family: verdana;
+ }
