@@ -1,0 +1,14 @@
+.login {
+	margin-left: 10px;
+}
+
+.login td{
+	padding: 2px;
+	padding-left: 20px;
+	font-weight: bold;
+}
+
+.login input[type=text],
+.login input[type=password] {
+	width: 160px;
+}
