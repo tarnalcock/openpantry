@@ -253,6 +253,7 @@
 		
 		$client_pickups_go = new Template();
 		$client_pickups_go->load('client_pickups_go');
+		$client_pickups_go_render['date'] = date('Y-m-d');
 		$client_pickups_go_render['id'] = $family['clientid'];
 		$client_pickups_go_render['bag'] = $bagname;
 		$client_pickups_go_render['active'] = $family['active'] == '1' ? 'checked' : '';
@@ -636,7 +637,7 @@
 				break;
 			case 'pickups':
 				if (post('did_submit') == 'yes') {
-					new_bag_transaction($client_command);
+					new_bag_transaction_date($client_command, post('date'));
 				}
 				
 				if (isset($client_command))
