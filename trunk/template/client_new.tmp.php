@@ -79,7 +79,8 @@
 			</td> 
 			<td>
 				<input onKeyDown="page_mud();" name="dob" type="text" />
-			</td> 
+				<span>YYYY-mm-dd</span>
+			</td>
 		</tr>
 		<tr class="row2">
 			<td>
@@ -159,6 +160,7 @@
 			</td> 
 			<td>
 				<input name="start" type="text" value="<?php echo date('Y-m-d'); ?>" />
+				<span>YYYY-mm-dd</span>
 			</td> 
 		</tr>
 		<tr class="row2">

@@ -354,7 +354,7 @@
 		render_all();
 	}
 	
-	function render_usda_sheet()
+	function render_usda_sheet($mode)
 	{
 		global $reporting_framework_render;
 		global $parameters;
@@ -372,7 +372,7 @@
 		$aid_columns = "";
 		foreach($aids as $aid) 
 			if($aid['usda_qualifier'] == '1') {
-				$aid_columns .= "<th>".$aid['name']."</th>"; $num_aids++;
+				$aid_columns .= "<th style=\"vertical-align: bottom;\">".$aid['name']."</th>"; $num_aids++;
 			}
 	
 		$reporting_list = new Template();
@@ -388,7 +388,12 @@
 		$report_row_render['size'] = '';
 		$report_row_render['client_aids'] = '';
 		
-		$clients = get_all_client_transactions($start_date, $end_date);
+		if($mode == "active") {
+			$clients = get_active_families();
+		} else {
+			$clients = get_all_client_transactions($start_date, $end_date);
+		}
+		
 		if ($clients != null) 
 			foreach ($clients as $client) {
 				$fam = get_family_by_id($client['clientid']);
@@ -397,7 +402,8 @@
 				$report_row_render['address'] = $client['address'];
 				$report_row_render['size'] = count(get_all_family_members($client['clientid']))+1;
 				$report_row_render['fuel'] = $fam['fuel_assistance'] == '1' ? "Yes" : "No";
-				$report_row_render['sig'] = $fam['usda_assistance'] == '1' ? "Yes" : "No";
+				//$report_row_render['sig'] = $fam['usda_assistance'] == '1' ? "Yes" : "No";
+				$report_row_render['sig'] = "";
 				
 				// Get and Render Client Aids
 				$report_row_render['client_aids'] = '';
@@ -460,7 +466,7 @@
 				render_food_source_report();
 				break;
 			case 'usda':
-				render_usda_sheet();
+				render_usda_sheet("active");
 				break;
 			default:
 				$reporting_framework_render['message'] = 'An error occurred.';
