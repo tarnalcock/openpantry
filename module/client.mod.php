@@ -195,31 +195,30 @@
 		}
 		
 		$toggle = true;
-		$products_html = '';
-		$products_rows = '';
+		$transactions_html = '';
+		$transactions_rows = '';
 		
-		$client_pickups_products = new Template();
-		$client_pickups_products->load('client_pickups_products');
+		$client_pickups_transactions = new Template();
+		$client_pickups_transactions->load('client_pickups_transactions');
 		
-		$client_pickups_products_row = new Template();
-		$client_pickups_products_row->load('client_pickups_products_row');
+		$client_pickups_transactions_row = new Template();
+		$client_pickups_transactions_row->load('client_pickups_transactions_row');
 		
-		$products = get_bag_contents($family['bagid']);
-		foreach ($products as $product) {
-			$client_pickups_products_row_render['row'] = $toggle ? '1' : '2';
-			$client_pickups_products_row_render['product'] = $product['name'];
-			$client_pickups_products_row_render['quantity'] = $product['quantity'];
-			$client_pickups_products_row->set_vars($client_pickups_products_row_render);
-			$client_pickups_products_row->parse();
-			$products_rows .= $client_pickups_products_row->final;
+		$transactions = get_client_transactions($family['clientid']);
+		foreach ($transactions as $transaction) {
+			$client_pickups_transactions_row_render['row'] = $toggle ? '1' : '2';
+			$client_pickups_transactions_row_render['date'] = $transaction['date'];
+			$client_pickups_transactions_row->set_vars($client_pickups_transactions_row_render);
+			$client_pickups_transactions_row->parse();
+			$transactions_rows .= $client_pickups_transactions_row->final;
 			
 			$toggle = !$toggle;
 		}
 		
-		$client_pickups_products_render['rows'] = $products_rows;
-		$client_pickups_products->set_vars($client_pickups_products_render);
-		$client_pickups_products->parse();
-		$products_html = $client_pickups_products->final;
+		$client_pickups_transactions_render['rows'] = $transactions_rows;
+		$client_pickups_transactions->set_vars($client_pickups_transactions_render);
+		$client_pickups_transactions->parse();
+		$products_html = $client_pickups_transactions->final;
 		
 		$toggle = true;
 		$html = '';

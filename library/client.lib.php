@@ -38,6 +38,11 @@
 		return rtoa($s);
 	}
 	
+	function get_client_transactions($clientid) {
+		$s = q("SELECT * FROM transaction WHERE clientid = '".clean_query($clientid)."' ORDER BY date DESC;");
+		return rtoa($s);
+	}
+	
 	function get_all_client_transactions($start_date, $end_date) {
 		$s = q("SELECT * FROM transaction as t LEFT JOIN family as f ON t.clientid = f.clientid WHERE t.clientid IS NOT NULL AND t.date >= '".clean_query($start_date)."' AND t.date <= '".clean_query($end_date)."';");
 		return rtoa($s);
