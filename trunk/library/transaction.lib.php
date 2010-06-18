@@ -21,6 +21,27 @@ function new_bag_transaction($clientid) {
 	return true;
 }
 
+function new_bag_transaction_date($clientid, $date) {
+	$client = get_family_by_id($clientid);
+	$s = q("insert into transaction values('', '".clean_query($clientid)."', ".clean_query($client['delivery']).", '".clean_query($date)."');");
+
+	if (a() == 0) 
+		return false;
+	
+	$id = i();
+	$sources = get_all_bag_food_sources($client['bagid']);
+	foreach ($sources as $source) {
+		$s = q("insert into transaction_to_food_source values('".$id."', '".$source['sourceid']."', '".$source['weight']."', '".$source['price']."');");
+	}
+	
+	if (a() == 0) {
+		$s = q("delete from transaction where transaction.transactionid = '".clean_query($clientid)."' limit 1;");
+		return false;
+	}
+	
+	return true;
+}
+
 function new_dropoff_transaction() {
 	$s = q("insert into transaction values('', NULL, '', CURDATE());");
 
