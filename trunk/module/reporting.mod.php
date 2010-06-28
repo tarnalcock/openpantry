@@ -64,7 +64,7 @@
 		$report['Total Number of Children (under 18) Served'] = $children;
 		$report['Total Number of Seniors (65 and older) Served'] = $seniors;
 		$report['Total Number of Clients Served'] = $total_clients;
-		$report['Total Number of Bags or Boxes Served'] = $households;
+		$report['Total Number of Bags or Boxes Served'] =$total_clients + 3*$households;
 		return $report;
 	}
 	
