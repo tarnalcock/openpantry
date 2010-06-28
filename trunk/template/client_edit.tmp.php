@@ -108,7 +108,7 @@
 		</tr>
 		<tr class="row1">
 			<td>
-				Fuel Assistance
+				Meets Income Eligibility Guidelines
 			</td> 
 			<td>
 				<input onChange="page_mud();" name="fuel" type="checkbox" value="true" <%%fuel%%>/>
