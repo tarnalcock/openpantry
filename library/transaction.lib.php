@@ -23,7 +23,7 @@ function new_bag_transaction($clientid) {
 
 function new_bag_transaction_date($clientid, $date) {
 	$client = get_family_by_id($clientid);
-	$s = q("insert into transaction values('', '".clean_query($clientid)."', ".clean_query($client['delivery']).", '".clean_query($date)."');");
+	$s = q("insert into transaction values('', '".clean_query($clientid)."', '".clean_query($client['delivery'])."', '".clean_query($date)."');");
 
 	if (a() == 0) 
 		return false;
@@ -35,7 +35,7 @@ function new_bag_transaction_date($clientid, $date) {
 	}
 	
 	if (a() == 0) {
-		$s = q("delete from transaction where transaction.transactionid = '".clean_query($clientid)."' limit 1;");
+		$s = q("delete from transaction where transaction.transactionid = '".clean_query($id)."' limit 1;");
 		return false;
 	}
 	
