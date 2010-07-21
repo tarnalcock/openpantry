@@ -191,7 +191,15 @@
 		$bag_new->parse();
 		$content .= $bag_new->final;
 		
+		$bags = get_all_bags();
+		$bag_list = "<option name='none' id='none' value='none'>None</option>";
+		foreach($bags as $bag)
+		{
+			$bag_list .= "<option name='".$bag['name']."' id='".$bag['name']."' value='".$bag['bagid']."'>".$bag['name']."</option>";
+		}
+		
 		$bag_framework_render['content'] = $content;
+		$bag_framework_render['bags'] = $bag_list;
 		render_all();
 	}
 	
@@ -315,7 +323,7 @@
 				render_new_bag();
 				break;
 			case 'save':
-				$bagid = create_bag(post('name'));
+				$bagid = create_bag(post('name'), post('bag'));
 				redirect('/pantry/bag/edit/'.$bagid);
 				break;
 			case 'edit':

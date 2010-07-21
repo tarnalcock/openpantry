@@ -43,5 +43,13 @@
 				<input name="name" type="text" />
 			</td>
 		</tr>
+		<tr class="row1">
+			<td>Copy Products From</td>
+			<td>
+				<select name="bag" id="bag">
+					<%%bags%%>
+				</select>
+			</td>
+		</tr>
 	</table>
 </form>
