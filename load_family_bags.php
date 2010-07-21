@@ -15,7 +15,7 @@ $bag_names = array('1' => 'Family of One', '2' => 'Family of Two', '3' => 'Famil
 			'6' => 'Family of Six', '7' => 'Family of Seven', '8' => 'Family of Eight', '9' => 'Family of Nine', '10' => 'Family of Ten');
 $bag_ids = array();
 for($i = 1; $i <= 10; $i++) {
-	$bag_id = create_bag($bag_names[$i]); // Create bag
+	$bag_id = create_bag($bag_names[$i], 'none'); // Create bag
 	if(!$bag_id) {	// if bag alreadt exists get its bag_id
 		$bag = get_bag_by_name($bag_names[$i]);  
 		$bag_id = $bag['bagid'];
@@ -47,9 +47,10 @@ if (($handle = fopen("distribution.csv", "r")) !== FALSE) {
 		for($i = 1; $i <= 10; $i++) {
 			$bag_id = $bag_ids[$i];
 			$quantity = $data[$i];
+			$choice = $data[11] == 'Y' ? '1' : '0';
 			if($quantity != '') {
 				echo "Bag Name: ".$bag_names[$i]." | BagID: ".$bag_id." | Quantity: " . $quantity . "<br/>";
-				create_bag_content($bag_id, $product_id, $quantity, '0', '');
+				create_bag_content($bag_id, $product_id, $quantity, $choice, '');
 			}
 		}
 		/*
