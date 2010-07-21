@@ -40,7 +40,7 @@
 		$render['tier_2'] = $client_framework->final;
 	}
 	
-	function render_all_families($families) {
+	function render_all_families($families, $comments_hide) {
 		global $client_framework_render;
 		global $parameters;
 		foreach ($parameters as $parameter)
@@ -55,6 +55,10 @@
 		
 		$client_list = new Template();
 		$client_list->load('client_list');
+		if($comments_hide)
+			$client_list_render['comments_hide_show'] = " <a href='/pantry/client/family/' style='font-size:10px'> (show)</a>";
+		else
+			$client_list_render['comments_hide_show'] = " <a href='/pantry/client/family/hide' style='font-size:10px'> (hide)</a>";
 		$client_list_render['families'] = '';
 		
 		$client_family_row = new Template();
@@ -84,7 +88,8 @@
 			$client_family_row_render['address'] = $family['address'];
 			$client_family_row_render['telephone'] = $family['telephone'];
 			$client_family_row_render['start'] = $family['start_date'];
-			$client_family_row_render['comments'] = $family['comments'];
+			if(!$comments_hide)
+				$client_family_row_render['comments'] = $family['comments'];
 			$client_family_row->set_vars($client_family_row_render);
 			$client_family_row->parse();
 			$content .= $client_family_row->final;
@@ -633,7 +638,11 @@
 	if (in_array($module_command, $module_commands)) {
 		switch ($module_command) {
 			case 'family':
-				render_all_families(get_all_families());
+				if(isset($client_command) && $client_command == 'hide')
+					$comments_hide = true;
+				else
+					$comments_hide = false;
+				render_all_families(get_all_families(), $comments_hide);
 				break;
 			case 'pickups':
 				if (post('did_submit') == 'yes') {

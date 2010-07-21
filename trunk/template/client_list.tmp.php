@@ -57,7 +57,7 @@
 			Start Date
 		</th>
 		<th>
-			Comments
+			Comments <%%comments_hide_show%%>
 		</th>
 	</tr>
 	<%%families%%>

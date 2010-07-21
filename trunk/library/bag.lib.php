@@ -59,12 +59,22 @@
 		return false;
 	}
 		
-	function create_bag($name) {
+	function create_bag($name, $source_bagid) {
 		$s = q("insert into bag values('', '".clean_query($name)."')");
-		if (a() > 0)
-			return i();
-			
-		return false;
+		if (a() == 0)
+			return false;
+		
+		$bagid = i();
+
+		if($source_bagid != 'none') {
+			copy_bag_contents($source_bagid, $bagid);
+		}
+		return $bagid;
+	}
+	
+	function copy_bag_contents($srcbid, $destbid) {
+		$s = q("INSERT INTO bag_to_food_source (sourceid, bagid, weight, price) (SELECT sourceid, '".$destbid."', weight, price FROM bag_to_food_source WHERE bagid = '".$srcbid."')");
+		$s = q("INSERT INTO bag_to_product (bagid, productid, quantity, choice, notes) (SELECT '".$destbid."', productid, quantity, choice, notes FROM bag_to_product WHERE bagid = '".$srcbid."')");
 	}
 	
 	function edit_bag($bagid, $name) {
