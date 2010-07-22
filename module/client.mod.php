@@ -630,7 +630,7 @@
 	
 	if (!isset($module_command)) {
 		// display main blog page
-		render_all_families(get_all_families());
+		render_all_families(get_all_families(), false);
 		return;
 	}
 	
@@ -810,7 +810,7 @@
 				break;
 			default:
 				$client_framework_render['message'] = 'An error occurred.<br />';
-				render_all_families(get_all_families());
+				render_all_families(get_all_families(), false);
 		}
 		return;
 	}
