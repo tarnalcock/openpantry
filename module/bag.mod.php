@@ -89,7 +89,10 @@
 			$bag_row_render['total_cost'] = $total_cost;
 			
 			$bag_contents = get_bag_contents($bag['bagid']);
-			$bag_row_render['num_products'] = count($bag_contents);
+			$bag_row_render['num_products'] = '0';
+			foreach($bag_contents as $product)
+        $bag_row_render['num_products'] += $product['quantity'];
+			//$bag_row_render['num_products'] = count($bag_contents);
 			
 			$bag_clients = get_bag_clients($bag['bagid']);
 			$bag_row_render['num_clients'] = count($bag_clients);
