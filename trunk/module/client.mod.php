@@ -15,7 +15,7 @@
 	global $module_commands;
 	$module_commands = array('family', 'dropoffs', 'pickups', 'deliveries', 'new', 'edit', 'render', 'ajax');
 	$render_commands = array('family_members');
-	$ajax_commands = array('family_members');
+	$ajax_commands = array('family_members', 'transactions');
 	
 	$parameters = array('module_command', 'client_command', 'action_command');
 	expand_get($parameters);
@@ -213,6 +213,8 @@
 		foreach ($transactions as $transaction) {
 			$client_pickups_transactions_row_render['row'] = $toggle ? '1' : '2';
 			$client_pickups_transactions_row_render['date'] = $transaction['date'];
+			$client_pickups_transactions_row_render['clientid'] = $family['clientid'];
+			$client_pickups_transactions_row_render['transactionid'] = $transaction['transactionid'];
 			$client_pickups_transactions_row->set_vars($client_pickups_transactions_row_render);
 			$client_pickups_transactions_row->parse();
 			$transactions_rows .= $client_pickups_transactions_row->final;
@@ -790,6 +792,19 @@
 										break;
 									case 'delete':
 										delete_client(post('id'));
+										exit();
+										break;
+									default:
+										redirect('/pantry/error/invalid-page');
+								}
+							} else
+								redirect('/pantry/error/invalid-page');
+							break;
+						case 'transactions':
+							if(isset($action_command)) {
+								switch ($action_command) {
+									case 'delete':
+										delete_client_transaction(post('transactionid'));
 										exit();
 										break;
 									default:

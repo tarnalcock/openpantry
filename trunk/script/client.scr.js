@@ -106,6 +106,19 @@ function client_family_members_save(clientid, familyid) {
 
 }
 
+function client_transaction_delete(clientid, transaction_id, date) {
+	var stop = false;
+	
+	jConfirm('Are you sure you want to delete this client transaction?<br/><center><strong>Date:'+date+'</strong></center>', 'Delete Client Transaction', function(r) {
+		if (r) {
+		$.post('/pantry/client/ajax/transactions/delete', { transactionid: transaction_id },
+			function(data){
+				window.location = '/pantry/client/pickups/'+clientid;
+			});
+		}
+	});
+}
+
 function page_mud() {
 	page_dirty = true;
 }
