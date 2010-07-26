@@ -28,13 +28,27 @@
 	</div>
 </div>
 
+<!-- Make select all checkbox function using jQuery -->
+<script>
+$(function () { 
+	$('.checkall').click(function () {
+		$(this).parents('fieldset:eq(0)').find(':checkbox').attr('checked', this.checked);
+	});
+})
+</script>
+
+<fieldset>
 <table class="family_list" style="margin-top: -20px;">
 	<tr>
+		<td></td>
 		<td colspan="8" style="background-color: white;">
 			<img src="/pantry/images/help_delivery_signin.png" />
 		</td>
 	</tr>
 	<tr>
+		<th style="width: 21px;">
+			<input type="checkbox" name="checkall" id="checkall" value="checkall" class="checkall"/>
+		</th>
 		<th style="width: 21px;">
 			
 		</th>
@@ -64,4 +78,13 @@
 		</th>
 	</tr>
 	<%%families%%>
+</table>
+</fieldset>
+
+<br/>		  
+<table class="family_list">
+	<tr><td></td></tr>
+	<tr><td>
+		<input type="submit" onClick="page_clean(); doSelectedDeliveries(); return false;" value="Complete Selected Deliveries" style="font-weight: bold;" />	
+	</td></tr>
 </table>
