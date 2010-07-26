@@ -48,4 +48,9 @@
 		return null;
 	}
 	
+	function get_all_users() {
+		$s = q("select * from user order by userid asc;");
+		return rtoa($s);
+	}
+	
 ?>
