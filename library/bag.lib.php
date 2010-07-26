@@ -12,7 +12,7 @@
 	}
 	
 	function get_bag_contents($bagid) {
-		$s = q("SELECT bp.productid, product.name, bp.quantity, bp.choice, bp.notes FROM bag LEFT JOIN bag_to_product as bp ON bag.bagid = bp.bagid LEFT JOIN product ON product.productid = bp.productid WHERE bp.bagid = '".clean_query($bagid)."' order by name asc;");
+		$s = q("SELECT bp.productid, product.name, bp.quantity, bp.choice, bp.notes FROM bag LEFT JOIN bag_to_product as bp ON bag.bagid = bp.bagid LEFT JOIN product ON product.productid = bp.productid WHERE bp.bagid = '".clean_query($bagid)."' order by choice asc, name asc;");
 		return rtoa($s);
 	}
 	

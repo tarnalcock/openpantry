@@ -125,6 +125,18 @@
 		return false;
 	}
 	
+	function delete_client_transaction($transactionid) {
+		$s = q("delete from transaction where transactionid = '".clean_query($transactionid)."';");
+		if(a() <= 0)
+			return false;
+		
+		$s = q("delete from transaction_to_food_source where transactionid = '".clean_query($transactionid)."';");
+		if(a() <= 0)
+			return false;
+		
+		return true;
+	}
+	
 	/** import family information from csv version of the excel master database
 	  */
 	function import_family($last_name, $first_name, $dob, $address, $telephone, $family_size, $seniors, $adults, $children, $delivery, $dietary, $second_fourth_both, $wages, $unemployment, $wic, $welfare, $head_start, $afdc, $veterans_aid, $social_security, $ssi, $other, $fuel, $food_stamps, $cooking, $start, $comments, $name2, $dob2, $name3, $dob3, $name4, $dob4, $name5, $dob5, $name6, $dob6, $name7, $dob7, $name8, $dob8, $name9, $dob9, $name10, $dob10, $sep2009, $oct2009, $nov2009, $dec2009, $jan2010, $feb2010, $mar2010, $apr2010) {
