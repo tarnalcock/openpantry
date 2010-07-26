@@ -1,11 +1,11 @@
-<form method="post" action="/pantry/login/accounts/edit/<%%id%%>">
+<form method="post" action="/pantry/login/accounts/change_password/<%%id%%>">
 	<div style="float: left; width: 100%; margin-bottom: 10px;">
 		<div style="float: left; padding-left: 10px;">
 			<img src="/pantry/images/family.png" />
 		</div>
 		<div style="float: left; padding-left: 10px;">
 			<div style="font-family: georgia; font-size: 36px; margin-bottom: 10px;">
-				Edit Account
+				Change Password
 			</div>
 			<div style="width: 316px;">
 			  <b class="spiffy">
@@ -16,7 +16,7 @@
 			  <b class="spiffy5"></b></b>
 
 			  <div class="spiffyfg-b">
-				<input type="submit" onClick="page_clean();" value="Save Account" style="font-weight: bold;"/>
+				<input type="submit" onClick="page_clean();" value="Change Password" style="font-weight: bold;"/>
 			  </div>
 
 			  <b class="spiffy">
@@ -30,46 +30,38 @@
 	</div>
 
 	<input type="hidden" name="did_submit" value="yes" />
-	<input type="hidden" name="userid" value="<%%id%%>" />
+	<span style="color: red;"><%%error%%></span>
 	<table class="client_new">
 		<tr class="row1">
 			<td>
-				Username
+				Username:
 			</td>
 			<td>
-				<input name="username" type="text" value="<%%username%%>"/>
-			</td>
-		</tr>
-		<tr class="row1">
-			<td>
-				Password
-			</td>
-			<td>
-				<input name="change_password" type="button" value="Change Password" onclick="window.location='/pantry/login/accounts/change_password/<%%id%%>';"/>
+				<%%username%%>
 			</td>
 		</tr>
 		<tr class="row1">
 			<td>
-				First Name
+				Old Password
 			</td>
 			<td>
-				<input name="lastname" type="text" value="<%%firstname%%>"/>
-			</td>
-		</tr>
-		<tr class="row1">
-			<td>
-				Last Name
-			</td>
-			<td>
-				<input name="firstname" type="text" value="<%%lastname%%>"/>
+				<input name="old_password" type="text"/>
 			</td>
 		</tr>
 		<tr class="row1">
 			<td>
-				Email
+				New Password
 			</td>
 			<td>
-				<input name="email" type="text" value="<%%email%%>"/>
+				<input name="new_password" type="password"/>
+			</td>
+		</tr>
+		<tr class="row1">
+			<td>
+				Confirm New Password
+			</td>
+			<td>
+				<input name="new_password_confirm" type="password"/>
 			</td>
 		</tr>
 	</table>
