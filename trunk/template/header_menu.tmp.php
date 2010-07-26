@@ -1,5 +1,8 @@
 				<div class="banner">
 					<img src="/pantry/images/banner.png" />
+					<span style="position: absolute; top: 1em; right: 1em;">
+						<a style="color:white;" href="/pantry/login/signout">Log Out</a>
+					</span>
 				</div>
 				<div class="header_menu">
 					&nbsp;
@@ -85,6 +88,11 @@
 							<li>
 								<a href="/pantry/foodsource/list">Food Sources</a>
 							</li>
+							<!--
+							<li>
+								<a href="/pantry/login/accounts">Accounts</a>
+							</li>
+							-->
 						</ul>
 					</li>
 				</ul>
