@@ -66,4 +66,18 @@
 			return true;
 		return false;
 	}
+	
+	function user_change_password($userid, $old_password, $new_password) {		
+		$user_entry = get_user_by_id($userid);
+		$checksum = md5(md5($old_password) . $user_entry['salt']);
+		if ($checksum == $user_entry['password']) {
+			// valid old password, set new password
+			$new_checksum = md5(md5($new_password) . $user_entry['salt']);
+			$s = q("UPDATE user SET password = '".clean_query($new_checksum)."' WHERE userid = '".clean_query($userid)."' LIMIT 1;");
+			if(a() > 0)
+				return true;
+			return false;
+		} else // invalid old password
+			return false;
+	}
 ?>
