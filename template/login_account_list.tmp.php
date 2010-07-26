@@ -8,6 +8,7 @@
 			<div style="font-family: georgia; font-size: 36px; margin-bottom: 10px;">
 				Manage Accounts
 			</div>
+			<input type="button" onClick="window.location='/pantry/login/register';" value="Create Account" style="font-weight: bold;"/>
 		</div>
 	</div>
 </form>
