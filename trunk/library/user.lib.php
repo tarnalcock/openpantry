@@ -53,4 +53,17 @@
 		return rtoa($s);
 	}
 	
+	function edit_user($userid, $username, $first_name, $last_name, $email) {
+		$s = q("UPDATE user SET username = '".clean_query($username)."', first_name  = '".clean_query($first_name)."', last_name  = '".clean_query($last_name)."', email  = '".clean_query($email)."' WHERE userid = '".clean_query($userid)."' LIMIT 1;");
+		if(a() > 0)
+			return true;
+		return false;
+	}
+	
+	function delete_user($userid) {
+		$s = q("DELETE FROM user WHERE userid = '".clean_query($userid)."' LIMIT 1;");
+		if(a() > 0)
+			return true;
+		return false;
+	}
 ?>

@@ -119,6 +119,19 @@ function client_transaction_delete(clientid, transaction_id, date) {
 	});
 }
 
+function account_delete(user_id, username) {
+	var stop = false;
+	
+	jConfirm('Are you sure you want to delete this user account?<br/><center><strong>Username: '+username+'</strong></center>', 'Delete User Account', function(r) {
+		if (r) {
+		$.post('/pantry/login/accounts/delete', { userid: user_id, did_submit: 'yes' },
+			function(data){
+				window.location = '/pantry/login/accounts/';
+			});
+		}
+	});
+}
+
 function page_mud() {
 	page_dirty = true;
 }
