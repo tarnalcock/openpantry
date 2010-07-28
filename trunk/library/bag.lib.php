@@ -119,7 +119,7 @@
 	/** import bag information from csv version of the excel bag contents
 	  */
 	  
-	function import_bag_content($bagid, $name, $quantity, $notes) {
+	function import_bag_content($bagid, $name, $quantity, $notes, $choice) {
 		
 		// Create product in inventory
 		$productid = create_product($name, '');
@@ -128,6 +128,6 @@
 			$productid = $product['productid'];
 		}
 		echo "bag: ".$bagid." product: ".$productid." <br/>";
-		create_bag_content($bagid, $productid, $quantity, '0', $notes);
+		create_bag_content($bagid, $productid, $quantity, $choice, $notes);
 	}
 ?>
