@@ -12,7 +12,7 @@ global $bagid;
 
 
 if(!isset($_GET['bagfile'])) {
-	$handle = opendir("cvs/");
+	$handle = opendir("bags/");
 	while(false != ($file = readdir($handle))){
 		if($file != "." && $file != "..")
 			echo "<a href='load_RD_bag.php?bagfile=".$file."'>".$file."</a><br/>";
@@ -25,12 +25,12 @@ if(!isset($_GET['bagfile'])) {
 echo "Import bagfile: ".$_GET['bagfile']."<br/>";
 echo "Bag Name: ".substr($_GET['bagfile'],0,-4)."<br/>";
 
-$path = 'cvs/';
+$path = 'bags/';
 $filename = $_GET['bagfile'];
 //$filename = "Ristricted Diet Request family of three.csv";
 
 // Get title from CSV filename and Create Bag
-$bagid = create_bag(substr($filename,0,-4));
+$bagid = create_bag(substr($filename,0,-4), 'none');
 if(!$bagid) {
 	$bag = get_bag_by_name($name);
 	$bagid = $bag['bagid'];
@@ -52,14 +52,15 @@ if (($handle = fopen($path.$filename, "r")) !== FALSE) {
 		$product_name = $data[1];
 		$quantity = $data[0];
 		$notes = $data[2];
-		
+		$choice = $data[3] == "Y" ? '1' : '0';
 		
 		// Add Product to Bag (Create or Find Existing Product from inventory)
 		import_bag_content(
 		$bagid,
 		$product_name,
 		$quantity,
-		$notes);
+		$notes,
+		$choice);
 		
 		
 		echo "Product: " . $product_name . " | Quantity: " . $quantity . " | Notes: " . $notes . "<br/>";
