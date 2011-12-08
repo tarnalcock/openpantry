@@ -9,7 +9,7 @@
 		contains the aid pages	*/
 	
 	if (!is_access(access_inventory) && !is_access(access_all)) {
-		redirect('/pantry/error/no_access');
+		redirect($g["abs_url"].'/error/no_access');
 	}
 	
 	global $render;
@@ -162,7 +162,7 @@
 				break;
 			case 'save':
 				create_aid(post('name'));
-				redirect('/pantry/aid/list');
+				redirect($g["abs_url"].'/aid/list');
 				break;
 			case 'edit':
 				// Make sure productid set to edit
@@ -175,16 +175,16 @@
 						$usda_qualifier = $_POST['usda_qualifier'];
 						edit_aid($aidid, $new_name, $usda_qualifier);
 						//echo "Update food source to '".$new_name."'";
-						redirect('/pantry/aid/list/');
+						redirect($g["abs_url"].'/aid/list/');
 					} 
 					// Show the updated food source
 					render_edit_aid($aidid);
-				} else redirect('/pantry/error/invalid-page');
+				} else redirect($g["abs_url"].'/error/invalid-page');
 				break;
 			case 'delete':
 				if(isset($aid_command)) {
 					delete_aid($aid_command);
-					redirect('/pantry/aid/list/');
+					redirect($g["abs_url"].'/aid/list/');
 				}
 				break;
 			default:

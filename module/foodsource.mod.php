@@ -9,7 +9,7 @@
 		contains the inventory pages	*/
 	
 	if (!is_access(access_inventory) && !is_access(access_all)) {
-		redirect('/pantry/error/no_access');
+		redirect($g["abs_url"].'/error/no_access');
 	}
 	
 	global $render;
@@ -159,7 +159,7 @@
 				break;
 			case 'save':
 				create_food_source(post('name'));
-				redirect('/pantry/foodsource/list');
+				redirect($g["abs_url"].'/foodsource/list');
 				break;
 			case 'edit':
 				// Make sure productid set to edit
@@ -171,16 +171,16 @@
 						$new_name = $_POST['name'];
 						edit_food_source($sourceid, $new_name);
 						//echo "Update food source to '".$new_name."'";
-						redirect('/pantry/foodsource/list/');
+						redirect($g["abs_url"].'/foodsource/list/');
 					} 
 					// Show the updated food source
 					render_edit_foodsource($sourceid);
-				} else redirect('/pantry/error/invalid-page');
+				} else redirect($g["abs_url"].'/error/invalid-page');
 				break;
 			case 'delete':
 				if(isset($foodsource_command)) {
 					delete_food_source($foodsource_command);
-					redirect('/pantry/foodsource/list/');
+					redirect($g["abs_url"].'/foodsource/list/');
 				}
 				break;
 			default:

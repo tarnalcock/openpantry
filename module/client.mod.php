@@ -8,7 +8,7 @@
 		contains the client pages	*/
 	
 	if (!is_access(access_client) && !is_access(access_all)) {
-		redirect('/pantry/error/no_access');
+		redirect($g["abs_url"].'/error/no_access');
 	}
 	
 	global $render;
@@ -56,9 +56,9 @@
 		$client_list = new Template();
 		$client_list->load('client_list');
 		if($comments_hide)
-			$client_list_render['comments_hide_show'] = " <a href='/pantry/client/family/' style='font-size:10px'> (show)</a>";
+			$client_list_render['comments_hide_show'] = " <a href='".$g["abs_url"]."/client/family/' style='font-size:10px'> (show)</a>";
 		else
-			$client_list_render['comments_hide_show'] = " <a href='/pantry/client/family/hide' style='font-size:10px'> (hide)</a>";
+			$client_list_render['comments_hide_show'] = " <a href='".$g["abs_url"]."/client/family/hide' style='font-size:10px'> (hide)</a>";
 		$client_list_render['families'] = '';
 		
 		$client_family_row = new Template();
@@ -705,7 +705,7 @@
 												  post('start'),
 												  post('comments'));
 						if ($familyid > 0) {
-							redirect('/pantry/client/edit/'.$familyid);
+							redirect($g["abs_url"].'/client/edit/'.$familyid);
 						} else {
 							$client_framework_render['message'] = 'An error occurred.<br />';
 						}
@@ -753,7 +753,7 @@
 				if (isset($client_command))
 					render_edit($client_command);
 				else
-					redirect('/pantry/error/invalid-page');
+					redirect($g["abs_url"].'/error/invalid-page');
 				break;
 			case 'render':
 				if (isset($client_command) &&
@@ -763,13 +763,13 @@
 							if (isset($action_command))
 								render_family_members($action_command);
 							else
-								redirect('/pantry/error/invalid-page');
+								redirect($g["abs_url"].'/error/invalid-page');
 							break;
 						default:
-							redirect('/pantry/error/invalid-page');
+							redirect($g["abs_url"].'/error/invalid-page');
 					}
 				} else
-					redirect('/pantry/error/invalid-page');
+					redirect($g["abs_url"].'/error/invalid-page');
 				
 				echo "An error occurred.";
 				exit();
@@ -795,10 +795,10 @@
 										exit();
 										break;
 									default:
-										redirect('/pantry/error/invalid-page');
+										redirect($g["abs_url"].'/error/invalid-page');
 								}
 							} else
-								redirect('/pantry/error/invalid-page');
+								redirect($g["abs_url"].'/error/invalid-page');
 							break;
 						case 'transactions':
 							if(isset($action_command)) {
@@ -808,16 +808,16 @@
 										exit();
 										break;
 									default:
-										redirect('/pantry/error/invalid-page');
+										redirect($g["abs_url"].'/error/invalid-page');
 								}
 							} else
-								redirect('/pantry/error/invalid-page');
+								redirect($g["abs_url"].'/error/invalid-page');
 							break;
 						default:
-							redirect('/pantry/error/invalid-page');
+							redirect($g["abs_url"].'/error/invalid-page');
 					}
 				} else
-					redirect('/pantry/error/invalid-page');
+					redirect($g["abs_url"].'/error/invalid-page');
 				
 				echo "An error occurred.";
 				exit();

@@ -9,7 +9,7 @@
 		contains the inventory pages	*/
 	
 	if (!is_access(access_inventory) && !is_access(access_all)) {
-		redirect('/pantry/error/no_access');
+		redirect($g["abs_url"].'/error/no_access');
 	}
 	
 	global $render;
@@ -192,7 +192,7 @@
 				break;
 			case 'save':
 				create_product(post('name'), post('quantity'));
-				redirect('/pantry/inventory/');
+				redirect($g["abs_url"].'/inventory/');
 				break;
 			case 'edit':
 				// Make sure productid set to edit
@@ -208,12 +208,12 @@
 					} 
 					// Show the updated product
 					render_edit_product($productid);
-				} else redirect('/pantry/error/invalid-page');
+				} else redirect($g["abs_url"].'/error/invalid-page');
 				break;
 			case 'delete':
 				if(isset($inventory_command)) {
 					delete_product($inventory_command);
-					redirect('/pantry/inventory/list/');
+					redirect($g["abs_url"].'/inventory/list/');
 				}
 				break;
 			default:
