@@ -9,7 +9,7 @@
 		contains the inventory pages	*/
 	
 	if (!is_access(access_inventory) && !is_access(access_all)) {
-		redirect('/pantry/error/no_access');
+		redirect($g["abs_url"].'/error/no_access');
 	}
 	
 	global $render;

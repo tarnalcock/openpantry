@@ -18,7 +18,7 @@
 		contains the bag pages	*/
 	
 	if (!is_access(access_client) && !is_access(access_all)) {
-		redirect('/pantry/error/no_access');
+		redirect($g["abs_url"].'/error/no_access');
 	}
 	
 	global $render;
@@ -327,7 +327,7 @@
 				break;
 			case 'save':
 				$bagid = create_bag(post('name'), post('bag'));
-				redirect('/pantry/bag/edit/'.$bagid);
+				redirect($g["abs_url"].'/bag/edit/'.$bagid);
 				break;
 			case 'edit':
 				// Make sure bagid set to edit
@@ -351,14 +351,14 @@
 					} 
 					// Show the updated bag
 					render_edit_bag($bag_command);
-				} else redirect('/pantry/error/invalid-page');
+				} else redirect($g["abs_url"].'/error/invalid-page');
 				break;	
 			case 'delete':
 				if(isset($bag_command)) {
 					delete_bag($bag_command);
-					redirect('/pantry/bag/');
+					redirect($g["abs_url"].'/bag/');
 				} else 
-					redirect('/pantry/error/invalid-page');
+					redirect($g["abs_url"].'/error/invalid-page');
 				break;
 			case 'render':
 				if(isset($bag_command) && in_array($bag_command, $render_commands)) {
@@ -367,13 +367,13 @@
 							if(isset($action_command)) 
 								render_bag_products_ajax($action_command);
 							else 
-								redirect('/pantry/error/invalid-page');
+								redirect($g["abs_url"].'/error/invalid-page');
 							break;
 						default:
-							redirect('/pantry/error/invalid-page');
+							redirect($g["abs_url"].'/error/invalid-page');
 					}
 				} else 
-					redirect('/pantry/error/invalid-page');
+					redirect($g["abs_url"].'/error/invalid-page');
 				
 				
 				break;
@@ -407,10 +407,10 @@
 										exit();
 										break;
 									default:
-										redirect('/pantry/error/invalid-page');
+										redirect($g["abs_url"].'/error/invalid-page');
 								}
 							} else
-								redirect('/pantry/error/invalid-page');
+								redirect($g["abs_url"].'/error/invalid-page');
 							break;
 						case 'bag':
 							if(isset($action_command)) {
@@ -425,16 +425,16 @@
 										exit();
 										break;
 									default:
-										redirect('/pantry/error/invalid-page');
+										redirect($g["abs_url"].'/error/invalid-page');
 								}
 							} else
-								redirect('/pantry/error/invalid-page');
+								redirect($g["abs_url"].'/error/invalid-page');
 							break;	
 						default:
-							redirect('/pantry/error/invalid-page');
+							redirect($g["abs_url"].'/error/invalid-page');
 					}
 				} else
-					redirect('/pantry/error/invalid-page');
+					redirect($g["abs_url"].'/error/invalid-page');
 				
 				echo "An error occurred.";
 				exit();				
