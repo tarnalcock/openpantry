@@ -1,7 +1,7 @@
-<form id='drop' method="post" action="/pantry/client/dropoffs">
+<form id='drop' method="post" action="<%%ABSURL%%>/client/dropoffs">
 	<div style="float: left; width: 100%; margin-bottom: 10px;">
 		<div style="float: left; padding-left: 10px;">
-			<img src="/pantry/images/truck.png" />
+			<img src="<%%ABSURL%%>/images/truck.png" />
 		</div>
 		<div style="float: left; padding-left: 10px;">
 			<div style="font-family: georgia; font-size: 36px; margin-bottom: 10px;">

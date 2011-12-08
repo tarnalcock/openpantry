@@ -1,12 +1,12 @@
-<!--<form method="post" action="/pantry/bag/edit/<%%id%%>">-->
+<!--<form method="post" action="<%%ABSURL%%>/bag/edit/<%%id%%>">-->
 <script>
 product_list_load();
 </script>
 
-<form id="frmEdit" method="POST" action="/pantry/bag/edit/<%%id%%>">
+<form id="frmEdit" method="POST" action="<%%ABSURL%%>/bag/edit/<%%id%%>">
 	<div style="float: left; width: 100%; margin-bottom: 10px;">
 		<div style="float: left; padding-left: 10px;">
-			<img src="/pantry/images/bag.png" />
+			<img src="<%%ABSURL%%>/images/bag.png" />
 		</div>
 		<div style="float: left; padding-left: 10px;">
 			<div style="font-family: georgia; font-size: 36px; margin-bottom: 10px;">
@@ -48,7 +48,7 @@ product_list_load();
 		</tr>
 		<tr>
 			<td colspan="2" style="background-color: white;">
-				<img src="/pantry/images/help_product_add.png" />
+				<img src="<%%ABSURL%%>/images/help_product_add.png" />
 			</td>
 		</tr>
 		<tr>

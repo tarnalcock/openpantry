@@ -1,9 +1,9 @@
 	<tr class="<%%class%%>">
 		<td>
-			<a href="/pantry/bag/delete/<%%id%%>"><img src="/pantry/images/delete.png" /></a>
+			<a href="<%%ABSURL%%>/bag/delete/<%%id%%>"><img src="<%%ABSURL%%>/images/delete.png" /></a>
 		</td>
 		<td>
-			<a href="/pantry/bag/edit/<%%id%%>"><img src="/pantry/images/edit.png" /></a>
+			<a href="<%%ABSURL%%>/bag/edit/<%%id%%>"><img src="<%%ABSURL%%>/images/edit.png" /></a>
 		</td>
 		<td>
 			<%%name%%>

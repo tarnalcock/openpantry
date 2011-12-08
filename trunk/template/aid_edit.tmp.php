@@ -1,4 +1,4 @@
-<form method="post" action="/pantry/aid/edit/<%%id%%>">
+<form method="post" action="<%%ABSURL%%>/aid/edit/<%%id%%>">
 	<table class="client_new">
 		<tr>
 			<td colspan="2" style="border: 0px;">

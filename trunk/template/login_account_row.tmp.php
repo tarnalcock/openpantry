@@ -1,9 +1,9 @@
 	<tr class="<%%class%%>">
 		<td id="delete<%%id%%>">
-			<a href="#" onclick="account_delete('<%%id%%>', '<%%username%%>'); return false;"><img src="/pantry/images/delete.png" /></a>
+			<a href="#" onclick="account_delete('<%%id%%>', '<%%username%%>'); return false;"><img src="<%%ABSURL%%>/images/delete.png" /></a>
 		</td>
 		<td id="edit<%%id%%>">
-			<a href="/pantry/login/accounts/edit/<%%id%%>"><img src="/pantry/images/edit.png" /></a>
+			<a href="<%%ABSURL%%>/login/accounts/edit/<%%id%%>"><img src="<%%ABSURL%%>/images/edit.png" /></a>
 		</td>
 		<td id="username<%%id%%>" style="width: 40px;">
 			<%%username%%>
