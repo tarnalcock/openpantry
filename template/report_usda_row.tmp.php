@@ -1,6 +1,6 @@
 	<tr>
 		<td id="edit<%%id%%>">
-			<a href="/pantry/client/edit/<%%id%%>"><img src="/pantry/images/edit.png" /></a>
+			<a href="<%%ABSURL%%>/client/edit/<%%id%%>"><img src="<%%ABSURL%%>/images/edit.png" /></a>
 		</td>
 		<td id="name<%%id%%>">
 			<%%name%%>

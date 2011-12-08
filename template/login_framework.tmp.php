@@ -1,5 +1,5 @@
 				<div class="banner">
-					<img src="/pantry/images/banner.png" />
+					<img src="<%%ABSURL%%>/images/banner.png" />
 				</div>
 
 <%%message%%><br />

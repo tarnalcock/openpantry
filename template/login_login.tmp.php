@@ -1,4 +1,4 @@
-<form method="post" action="/pantry/login/signin">
+<form method="post" action="<%%ABSURL%%>/login/signin">
 	<table class="login">
 		<tr>
 			<td>

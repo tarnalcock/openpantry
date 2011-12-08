@@ -1,7 +1,7 @@
 				<div class="banner">
-					<img src="/pantry/images/banner.png" />
+					<img src="<%%ABSURL%%>/images/banner.png" />
 					<span style="position: absolute; top: 1em; right: 1em;">
-						<a style="color:white;" href="/pantry/login/signout">Log Out</a>
+						<a style="color:white;" href="<%%ABSURL%%>/login/signout">Log Out</a>
 					</span>
 				</div>
 				<div class="header_menu">
@@ -9,34 +9,34 @@
 				
 				<ul id="sample-menu-1" class="sf-menu">
 					<li class="current">
-						<a href="/pantry/home">Home</a>
+						<a href="<%%ABSURL%%>/home">Home</a>
 					</li>
 					<li class="current">
-						<a href="/pantry/client">Food</a>
+						<a href="<%%ABSURL%%>/client">Food</a>
 						<ul>
 							<li>
-								<a href="/pantry/client/pickups">Pickups</a>
+								<a href="<%%ABSURL%%>/client/pickups">Pickups</a>
 							</li>
 							<li>
-								<a href="/pantry/client/deliveries">Deliveries</a>
+								<a href="<%%ABSURL%%>/client/deliveries">Deliveries</a>
 							</li>
 							<li>
-								<a href="/pantry/client/dropoffs">Drop Offs</a>
+								<a href="<%%ABSURL%%>/client/dropoffs">Drop Offs</a>
 							</li>
 							<li>
-								<a style="border-top: 3px solid #CFDEFF;" href="/pantry/client/family">All Records</a>
+								<a style="border-top: 3px solid #CFDEFF;" href="<%%ABSURL%%>/client/family">All Records</a>
 							</li>
 						</ul>
 					</li>
 					
 					<li>
-						<a href="/pantry/client">Clients</a>
+						<a href="<%%ABSURL%%>/client">Clients</a>
 						<ul>
 							<li>
-								<a href="/pantry/client/new">New Family</a>
+								<a href="<%%ABSURL%%>/client/new">New Family</a>
 							</li>
 							<li>
-								<a href="/pantry/client/family">Family List</a>
+								<a href="<%%ABSURL%%>/client/family">Family List</a>
 							</li>
 						</ul>
 					</li>
@@ -45,16 +45,16 @@
 						<a href="#">Inventory</a>
 						<ul>
 							<li>
-								<a href="/pantry/bag/new">New Bag</a>
+								<a href="<%%ABSURL%%>/bag/new">New Bag</a>
 							</li>
 							<li>
-								<a href="/pantry/bag/list">Bag List</a>
+								<a href="<%%ABSURL%%>/bag/list">Bag List</a>
 							</li>
 							<li>
-								<a style="border-top: 3px solid #CFDEFF;" href="/pantry/inventory/new">New Product</a>
+								<a style="border-top: 3px solid #CFDEFF;" href="<%%ABSURL%%>/inventory/new">New Product</a>
 							</li>
 							<li>
-								<a href="/pantry/inventory/list/">Product List</a>
+								<a href="<%%ABSURL%%>/inventory/list/">Product List</a>
 							</li>
 						</ul>
 					</li>
@@ -62,19 +62,19 @@
 						<a href="#">Reporting</a>		
 						<ul>
 							<li>
-								<a href="/pantry/reporting/msr">MSR Summary</a>
+								<a href="<%%ABSURL%%>/reporting/msr">MSR Summary</a>
 							</li>
 							<li>
-								<a href="/pantry/reporting/clients">Active Clients</a>
+								<a href="<%%ABSURL%%>/reporting/clients">Active Clients</a>
 							</li>
 							<li>
-								<a href="/pantry/reporting/products">Grocery List</a>
+								<a href="<%%ABSURL%%>/reporting/products">Grocery List</a>
 							</li>
 							<li>
-								<a href="/pantry/reporting/food_sources">Food Source Distribution</a>
+								<a href="<%%ABSURL%%>/reporting/food_sources">Food Source Distribution</a>
 							</li>
 							<li>
-								<a href="/pantry/reporting/usda">USDA Sign In Sheet</a>
+								<a href="<%%ABSURL%%>/reporting/usda">USDA Sign In Sheet</a>
 							</li>
 						</ul>
 
@@ -83,13 +83,13 @@
 						<a href="#">Settings</a>
 						<ul>
 							<li>
-								<a href="/pantry/aid/list">Financial Aids</a>
+								<a href="<%%ABSURL%%>/aid/list">Financial Aids</a>
 							</li>
 							<li>
-								<a href="/pantry/foodsource/list">Food Sources</a>
+								<a href="<%%ABSURL%%>/foodsource/list">Food Sources</a>
 							</li>
 							<li>
-								<a href="/pantry/login/accounts">Accounts</a>
+								<a href="<%%ABSURL%%>/login/accounts">Accounts</a>
 							</li>
 						</ul>
 					</li>

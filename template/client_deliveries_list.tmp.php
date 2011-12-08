@@ -1,6 +1,6 @@
 <div style="float: left; width: 100%; margin-bottom: 10px;">
 	<div style="float: left; padding-left: 10px;">
-		<img src="/pantry/images/PackageIcon.png" />
+		<img src="<%%ABSURL%%>/images/PackageIcon.png" />
 	</div>
 	<div style="float: left; padding-left: 10px;">
 		<div style="font-family: georgia; font-size: 36px; margin-bottom: 10px;">
@@ -42,7 +42,7 @@ $(function () {
 	<tr>
 		<td></td>
 		<td colspan="8" style="background-color: white;">
-			<img src="/pantry/images/help_delivery_signin.png" />
+			<img src="<%%ABSURL%%>/images/help_delivery_signin.png" />
 		</td>
 	</tr>
 	<tr>

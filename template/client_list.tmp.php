@@ -1,6 +1,6 @@
 <div style="float: left; width: 100%; margin-bottom: 10px;">
 	<div style="float: left; padding-left: 10px;">
-		<img src="/pantry/images/family.png" />
+		<img src="<%%ABSURL%%>/images/family.png" />
 	</div>
 	<div style="float: left; padding-left: 10px;">
 		<div style="font-family: georgia; font-size: 36px; margin-bottom: 10px;">
@@ -31,7 +31,7 @@
 <table class="family_list" style="margin-top: -16px;">
 	<tr>
 		<td colspan="8" style="background-color: white;">
-			<img src="/pantry/images/help_family_edit.png" />
+			<img src="<%%ABSURL%%>/images/help_family_edit.png" />
 		</td>
 	</tr>
 	<tr>
