@@ -7,7 +7,7 @@
 	
 	global $render;
 	$render["page_start"] = microtime();
-	$render["page_title"] = "Pantry IQP";
+	$render["page_title"] = "Open Pantry [Demo]";
 	
 	/*	build tab strip 	*/
 	//$tab_strip = build_tabs();
