@@ -34,4 +34,5 @@ Now navigate to http://localhost/pantry in Mozilla Firefox and login.
 
 Note: 
 You may have to execute this SQL Query on the DB in order to create the root user
+
 {{{insert into user values('', 'root', '65ed971264288c2945c3db534fe55659', 'hZ/J9dr4iNpybGoXnlTeU/JHZc5hyjI/', 'Pantry', 'Admin', 'email@domain.com','1073741824');}}}
